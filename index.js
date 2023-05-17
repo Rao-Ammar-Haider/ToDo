@@ -4,8 +4,10 @@ const app = express();
 let inp;
 // let ejs = require('ejs');
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')  //to setup and start ejs.
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static("public")) //to add css in server based files.
+
 
 app.get('/',(req,res)=>{
     
@@ -26,7 +28,7 @@ app.get('/',(req,res)=>{
     
 })
 
-let inputs =[];
+let inputs =["Prayer", "Web Course", "BrakFast"];
 
 app.post("/",(req,res)=>{
  let inp = req.body.newItem

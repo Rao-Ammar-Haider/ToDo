@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EJS Learning</title>
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
+
 <body>
-   <h1><%=ajDate%></h1>
 
-   <ul>
-    <li>
-        prayer
-    </li>
-    <li>
-        study
-    </li>
-    <li>
-        brakfast
-    </li>
-    <!-- for(let i=0, i > inputs.lenght, i++ ) -->
+    <div class="box" id="heading">
 
+        <h1>
+            <%=ajDate%>
+        </h1>
 
-    <%for(let i=0; i<newItem.length; i++){%>
-        <li> <%= newItem[i]%></li>
+    </div>
+    <div class="box">
 
-        <% }%>
+        <%for(let i=0; i<newItem.length; i++){%>
 
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= newItem[i]%>
+                </p>
+            </div>
+            <% }%>
 
-
-   </ul>
-   <form action="/" method="post">
-    <input type="text" name="newItem" placeholder="Yaha kuch likho">
-    <button type="submit" name="btn">Submit</button>
-
-   </form>
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="Yaha kuch likho">
+                <button type="submit" name="btn">+</button>
+        
+            </form>
+    </div>
 </body>
+
 </html>
